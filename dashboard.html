@@ -1,0 +1,51 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CashChop Dashboard</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <header>
+      <h2>Welcome to Your Dashboard</h2>
+      <button id="logoutBtn">Logout</button>
+    </header>
+
+    <div class="balance-info">
+      <h3>Main Balance: ₦<span id="mainBalance">0</span></h3>
+      <p>Total Referrals: <span id="referralCount">0</span></p>
+    </div>
+
+    <div class="referral-link-section">
+      <p>Your Referral Link:</p>
+      <input type="text" id="refLink" readonly>
+    </div>
+
+    <button id="withdrawBtn">Withdraw</button>
+
+    <div id="withdrawForm" class="modal hidden">
+      <div class="modal-content">
+        <h3>Withdraw Funds</h3>
+        <p><strong>Note:</strong> Withdrawals will be enabled from August 1st, 2025. Minimum amount is ₦5000.</p>
+        <form id="withdrawalForm">
+          <input type="text" id="bank" placeholder="Bank Name" required>
+          <input type="text" id="accountNumber" placeholder="Account Number" required>
+          <input type="number" id="amount" placeholder="Amount (₦)" required>
+          <button type="submit">Submit Withdrawal</button>
+        </form>
+        <button id="closeWithdraw">Cancel</button>
+      </div>
+    </div>
+
+    <footer>
+      <p><strong>Terms & Conditions:</strong> We are not responsible for lost funds. If you do not withdraw by August 1st, 2025, the site will no longer be valid and funds will be lost.</p>
+    </footer>
+  </div>
+
+  <script src="./js/firebaseConfig.js"></script>
+  <script src="./js/dashboard.js"></script>
+</body>
+</html>
